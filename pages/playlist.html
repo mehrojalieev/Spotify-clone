@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <div class="flex h-auto">
+    <aside class="w-[300px] bg-[#000] text-[rgb(187,187,187)] p-[20px]">
+        <nav class="px-[30px] py-[70px] border-b-2 border-[hsl(0,0%,33%)]">
+            <ul class="text-[20px]">
+                <li class="hover:text-[#fff] hover:cursor-pointer"> <i class="bi bi-house-door-fill text-[25px] mr-[10px]"></i><a href="#"> Home</a></li>
+                <li class="hover:text-[#fff] hover:cursor-pointer"> <i class="bi bi-collection-play-fill text-[25px]  mr-[10px]"></i> <a href="#">Your Library</a></li>
+                <li class="hover:text-[#fff] hover:cursor-pointer"> <i class="bi bi-bookmark-heart-fill text-[25px]  mr-[10px]"></i> <a href="#">Liked songs</a></li>
+            </ul>
+        </nav>
+        <nav class="py-[70px]  h-[100vh] overflow-y-auto">
+            <ul id="main-nav-following" class="grid gap-[20px]">
+            </ul>
+        </nav>
+    </aside>
+    <main class="flex-1 bg-black">
+        <div class="h-[600px] bg-gradient-to-b from-lime-500 to-black">
+            <div class="h-[450px] flex max-w-[1400px] mx-auto p-[40px] gap-x-[50px]">
+                <img class="rounded-xl h-full aspect-square" src="https://cdn.syncfusion.com/content/images/common/placeholder.gif" alt="" id="playlist-image">
+                <div class="">
+                    <p class="text-[20px] text-[#fff]">PUBLIC PLAYLIST</p>
+                    <h1 class="text-[80px] font-bold text-[#fff]" id="playlist-name"></h1>
+                    <p class="text-[20px] text-[#fff]" id="playlist-artists"></p>
+                    <strong class="text-[25px] text-[#fff] block mt-[30px]" id="playlist-followers">Followers: 3878374</strong>
+                </div>
+            </div>
+        </div>
+        <div class="relative mt-[-100px] from-zinc-300 to-black backdrop-blur-[10px] h-[100vh] overflow-y-auto">
+            <div class="max-w-[1400px] gap-y-[15px] grid mx-auto p-[40px]"  id="playlists-tracks"> 
+                
+            </div>
+        </div>
+    </main>
+    <div class="flex justify-center fixed z-10 bottom-0 w-full h-[130px] bg-[black] border-t-2 border-[gray] pt-[20px]">
+        <div class="player-top flex">
+            <div class="play-music-info">
+                <img class="w-[300px] h-[300px] rounded-[4px] absolute top-[-303px]" src="https://cdn.syncfusion.com/content/images/common/placeholder.gif" alt="image" id="player-track-image">
+                <ul class="flex flex-col justify-center pl-[20px]">
+                    <marquee class="text-[#fff] font-medium text-[25px] whitespace-nowrap" id="player-track-name"></marquee>
+                    <ul class="flex gap-[10px] ">
+                        <p class="text-[#b7b7b7] font-medium text-[20px]" id="player-track-artist"></p>
+                    </ul>
+                </ul>  
+            </div>
+            <div class="player-timeline">
+                <div class="timeline-fill"></div>
+            </div>
+
+            <div class="flex player-top-wrapper" >
+            <button id="shuffle-track-btn"><i class="bi bi-shuffle"></i></button>
+            <button id="prev-track-btn"><i class="bi bi-skip-backward-circle-fill"></i></button>
+            <button id="play-btn"><i class="bi bi-play-circle-fill"></i></button>
+            <button id="pause-btn"><i class="bi bi-pause-circle-fill"></i></button>
+            <button id="next-track-btn"><i class="bi bi-skip-forward-circle-fill"></i></button>
+            <button><i class="bi bi-repeat"></i></button>
+            <audio controls id="audio"></audio>
+            </div>
+            <div class="pr-[30px]">
+                <input type="range" name="" id="player-track-volume">
+            </div>
+        </div>
+    </div>
+    </div>  
+    <script src="../script/playlist.js"></script>
+</body>
+</html>
